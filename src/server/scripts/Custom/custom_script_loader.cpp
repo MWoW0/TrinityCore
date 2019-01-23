@@ -23,6 +23,7 @@ void AddSC_npc_all_npc();
 void AddSC_teleporter_stone();
 void AddSC_reload_full_creature_template_command();
 void AddSC_reload_player_items_command();
+void AddSC_buffcommand();
 
 // The name of this function should match:
 // void Add${NameOfDirectory}Scripts()
@@ -35,4 +36,5 @@ void AddCustomScripts()
    AddSC_teleporter_stone();
     AddSC_reload_full_creature_template_command();
     AddSC_reload_player_items_command();
+    AddSC_buffcommand();
 }
