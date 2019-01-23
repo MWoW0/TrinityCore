@@ -25,6 +25,7 @@ void AddSC_reload_full_creature_template_command();
 void AddSC_reload_player_items_command();
 void AddSC_buffcommand();
 
+
 // The name of this function should match:
 // void Add${NameOfDirectory}Scripts()
 void AddCustomScripts()
