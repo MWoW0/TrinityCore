@@ -778,6 +778,7 @@ enum RBACPermissions
     RBAC_PERM_COMMAND_RELOAD_ITEM_TEMPLATE                    = 1000,
     RBAC_PERM_COMMAND_RELOAD_PLAYER_ITEMS                     = 1001,
     RBAC_PERM_COMMAND_RELOAD_FULL_CREATURE_TEMPLATE           = 1002,
+    RBAC_PERM_COMMAND_BUFF                                    = 1008,
     RBAC_PERM_MAX
 };
 
