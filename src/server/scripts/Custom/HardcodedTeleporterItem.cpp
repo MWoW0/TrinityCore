@@ -48,29 +48,12 @@ class HardcodedTeleporterItem : public ItemScript
 
 	/**
 	 * Called when player selects a menu item
-	 *
-	 * @implements Player.h#L1185 
 	 */
-    void OnGossipSelect(Player* player, uint32 gossipListId, uint32 menuId) 
-	{
-	    GossipMenu& gossipMenu = player->PlayerTalkClass->GetGossipMenu();
+    void OnGossipSelect(Player* player, Item* /*item*/, uint32 /*sender*/, uint32 action) override
+    {
+        ClearGossipMenuFor(player);
 
-	    if (menuId != gossipMenu.GetMenuId()) {
-            TC_LOG_INFO("scripts.Custom", "Tried to open gossip menu %u was expecting %u", gossipMenu.GetMenuId(), menuId);
-	        return;
-	    }
-
-	    GossipMenuItem const* item = gossipMenu.GetItem(gossipListId);
-	    if (!item) {
-            TC_LOG_INFO("scripts.Custom", "Could not find gossip item in list %u", gossipListId);
-	    	return;
-	    }
-
-	    uint32 gossipOptionId = item->OptionType;
-
-        TC_LOG_INFO("scripts.Custom", "Selected gossip ID %u", gossipOptionId);
-
-	    switch(gossipOptionId) {
+	    switch(action) {
 	    	case STARTER_MALL:
 	    		player->TeleportTo(530, -2278.14f, 5568.74f, 66.9998f, 5.9990100f);
 	    		break;
@@ -80,11 +63,6 @@ class HardcodedTeleporterItem : public ItemScript
 	    		break;
 	    }
     }
-
-	// void AddGossipItemFor(Player* player, uint32 icon, std::string const& text, uint32 sender, uint32 action) 
-	// { 
-	// 	player->PlayerTalkClass->GetGossipMenu().AddMenuItem(-1, icon, text, sender, action, "", 0);
-	// }
 };
 
 void AddSC_HardcodedTeleporterItem()
